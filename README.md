@@ -1,4 +1,4 @@
 SmartChat
 =========
 
-Universal chat module
+Universal chat module.
