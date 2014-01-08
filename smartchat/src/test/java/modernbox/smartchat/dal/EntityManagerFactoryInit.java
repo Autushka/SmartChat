@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
-import com.google.appengine.api.utils.SystemProperty;
+//import com.google.appengine.api.utils.SystemProperty;
 
 public class EntityManagerFactoryInit {
 	public static final boolean DEBUG = true;
@@ -32,18 +32,18 @@ public class EntityManagerFactoryInit {
       dsMYSQL.setPassword("");*/
 		EntityManagerFactory emf = null;
 		DataSource ds = null;
-		if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production ||
-			SystemProperty.environment.value() == SystemProperty.Environment.Value.Development) {
-			persistenceUnitName = "transactions-optional";
-			System.out.println("n*** App Engine JPA " + new java.util.Date());
-		} else {
+		//if (SystemProperty.environment.value() == SystemProperty.Environment.Value.Production ||
+		//	SystemProperty.environment.value() == SystemProperty.Environment.Value.Development) {
+		//	persistenceUnitName = "transactions-optional";
+		//	System.out.println("n*** App Engine JPA " + new java.util.Date());
+		//} else {
 			try {
 				ds = (DataSource) new InitialContext().lookup("java:comp/env/jdbc/mydb");
 			} catch (NamingException e) {
 			    if (DEBUG)
 				      System.out.println("n*** no context foud at " + new java.util.Date());
 			}
-		}
+		//}
 		if (ds == null) {
 			emf = Persistence.createEntityManagerFactory(persistenceUnitName);
 		    if (DEBUG)

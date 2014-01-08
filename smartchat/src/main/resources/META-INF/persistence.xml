@@ -32,7 +32,7 @@
 			<property name="eclipselink.target-database" value="HSQL"/>
 		</properties>
 	</persistence-unit>
-    <persistence-unit name="transactions-optional">
+    <persistence-unit name="transactions-optional-Test">
         <provider>org.datanucleus.api.jpa.PersistenceProviderImpl</provider>
 		<class>modernbox.smartchat.dal.model.Openchatroom</class>
 		<class>modernbox.smartchat.dal.model.Openchatroomsmessage</class>
