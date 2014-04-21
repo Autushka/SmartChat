@@ -16,6 +16,8 @@ import javax.persistence.*;
 	@NamedQuery(name = "Openchatroomsmessage.GetMaxRowId", query = "SELECT MAX( o.rowId ) FROM Openchatroomsmessage o WHERE o.userName = :u")})
 public class Openchatroomsmessage implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Transient   
+	protected Object[] jdoDetachedState;  
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

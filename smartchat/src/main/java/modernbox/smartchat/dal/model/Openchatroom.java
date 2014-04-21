@@ -17,6 +17,8 @@ import javax.persistence.*;
 	@NamedQuery(name = "Openchatroom.GetByUserAndParticipant", query = "SELECT o FROM Openchatroom o WHERE o.userName = :u AND o.participantName = :p")})
 public class Openchatroom implements Serializable {
 	private static final long serialVersionUID = 1L;
+	@Transient   
+	protected Object[] jdoDetachedState;  
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
